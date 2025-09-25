@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=MuseoModerno:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
+/* Estilos base */
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh; /* altura total de la pantalla */
+  display: flex;
+  justify-content: center; /* centra horizontal */
+  align-items: center;     /* centra vertical */
+  background-image: url("img/fondo.jpg");
+  background-size: cover;       /* Ajusta la imagen al tamaño de la pantalla */
+  background-position: center;  /* Centra la imagen */
+  background-repeat: no-repeat; /* Evita que se repita */  
+  font-family: 'MuseoModerno', 'Georgia', serif;
+  text-align: center;
+  color: #000;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-size: 3rem;
+  margin: 0;
+}
+
+.primer-titulo {
+  font-family: 'MuseoModerno', sans-serif;
+  font-weight: bold;   /* Bold */
+  font-style: italic; /* Italic */
+}
+
+.segundo-titulo {
+  font-family: 'MuseoModerno', sans-serif;
+  font-weight: lighter;   /* Bold */
+  font-style: italic; /* Italic */
+}
+
+img {
+  width: 20rem;       /* ancho fijo */
+  height: auto;       /* mantiene proporción */
+  border-radius: 10px; /* esquinas redondeadas */
+}
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  img {
+    width: 90%;       /* se ajusta al ancho del celular */
+    max-width: 16rem; /* límite para no crecer demasiado */
+  }
+
+  .container {
+    padding: 1rem;    /* agrega espacio interno */
+    max-width: 95%;   /* evita desbordes */
+  }
+}
+
+@media (max-width: 400px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  img {
+    width: 90%;       /* se ajusta al ancho del celular */
+    max-width: 16rem; /* límite para no crecer demasiado */
+  }
+
+  .container {
+    padding: 1rem;    /* agrega espacio interno */
+    max-width: 95%;   /* evita desbordes */
+  }
+}
