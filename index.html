@@ -1,18 +1,93 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BioArka</title>
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" type="image/png" href="icon-mapa.png">
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <div class="container">
-    <div class="icon">
-      <img src="css/img/servicio-tecnico.png" alt="Fuera de servicio">
+
+  <div id="pantalla-inicio">
+    <div class="inicio-caja">
+      <p class="inicio-subtitulo">Exploración holográfica</p>
+      <h1 class="inicio-titulo">Los animales guían el camino</h1>
+      <button id="btn-inicio">
+        <span class="flecha">➜</span>
+      </button>
     </div>
-    <h1 class="primer-titulo">Página temporalmente</h1>
-    <h1 class="segundo-titulo">fuera de servicio</h1>
   </div>
+
+  <!-- Contenedor principal -->
+  <div id="contenedor">
+    <!-- Todo lo que se mueve y escala va adentro de este grupo -->
+    <div id="mapa-grupo">
+      <img id="mapa" src="mapa-mundo.jpg" alt="Mapa">
+      <!-- Zonas clickeables, ahora viajan junto al mapa -->
+      <div class="zona ciudad"> <img src="ciudad.png" alt=""></div>
+      <div class="zona huerta"> <img src="huerta.png" alt=""> </div>
+      <div class="zona playa"> <img src="playa.png" alt=""></div>
+      <div class="zona tunel"> <img src="tunel.png" alt=""></div>
+      <div class="zona domo"> <img src="domo.png" alt=""></div>
+      <div class="zona incognita1"> <img src="Signo de pregunta1.png" alt=""></div>
+      <div class="zona incognita2"> <img src="Signo de pregunta2.png" alt=""></div>
+      <div class="zona animal1"> <img src="Animalitosuelto1.png" alt=""></div>
+      <div class="zona animal2"> <img src="Animalitosuelto2.png" alt=""></div>
+    </div>
+  </div>
+
+  <!-- Ventanas de información (fijas en pantalla, arrancan cerradas) -->
+  <div class="cont info">
+    <span class="cerrar">&times;</span>
+    <p>Bienvenidos a BioArka. En nuestras ciudades prevalece la convivencia entre la naturaleza y la tecnologia</p>
+  </div>
+
+  <div class="cont info">
+    <span class="cerrar">&times;</span>
+    <p>Cada ciudad se autosustenta con sus cultivos, mientras la comunidad trabaja unida para llevarlos a sus hogares.
+    </p>
+  </div>
+
+  <div class="cont info">
+    <span class="cerrar">&times;</span>
+    <p>Aunque visitada todo el año, esta playa se destaca durante el festival Tekové Pora.</p>
+  </div>
+
+  <div class="cont info">
+    <span class="cerrar">&times;</span>
+    <p>Entre entradas naturales y hilos de tecnología, los túneles subterráneos se abren una vez al año, celebrando la
+      llegada de los nuevos Bichis.</p>
+  </div>
+
+  <div class="cont info">
+    <span class="cerrar">&times;</span>
+    <p>En estos domos, nuestros amigos híbridos se crean genéticamente y se incuban hasta su liberación.</p>
+  </div>
+
+  <div class="cont info">
+    <span class="cerrar">&times;</span>
+    <p> <a href="https://www.instagram.com/festival_tekovepora/">En el Instagram del festival Tekove Pora</a> encontrarás más huellas de esta historia.</p>
+  </div>
+
+  <div class="cont info">
+    <span class="cerrar">&times;</span>
+    <p>Este año, nuevas criaturas se suman a ese vuelo. <a href="https://bioarka.github.io/bitacora.github.io/">Descúbrelas aquí.</a> </p>
+  </div>
+
+  <div class="cont info">
+    <span class="cerrar">&times;</span>
+    <p>Cada huella conduce al viaje, cada color guarda un lugar.</p>
+  </div>
+
+  <div class="cont info">
+    <span class="cerrar">&times;</span>
+    <p>Cada huella conduce al viaje, cada color guarda un lugar.</p>
+  </div>
+
+  <script src="script.js"></script>
 </body>
+
 </html>

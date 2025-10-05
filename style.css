@@ -1,0 +1,199 @@
+/* ----------------------------------------------------------
+   TIPOGRAFÍAS
+---------------------------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=MuseoModerno:wght@400;600;700&display=swap');
+
+/* ----------------------------------------------------------
+   RESET / BASE
+---------------------------------------------------------- */
+body {
+  margin: 0;
+  background: #eee;
+  overflow: hidden;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'MuseoModerno', sans-serif;
+}
+
+/* ----------------------------------------------------------
+   PANTALLA INICIAL
+---------------------------------------------------------- */
+#pantalla-inicio {
+  position: fixed;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.4); /* mapa visible pero suave */
+  backdrop-filter: blur(1px); /* efecto desenfoque del fondo */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  transition: opacity 0.8s ease;
+}
+
+/* --- Caja central --- */
+.inicio-caja {
+  background-image: url('fondo.png');
+  border-radius: 12px;
+  padding: 40px 60px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+  animation: fadeIn 1s ease;
+}
+
+.inicio-subtitulo {
+  font-size: 1rem;
+  margin-bottom: 8px;
+  color: #013C49;
+  font-weight: 400;
+}
+
+.inicio-titulo {
+  font-size: 1.3rem;
+  color: #013C49;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+/* --- Botón con flecha --- */
+#btn-inicio {
+  background: transparent;
+  border: 2px solid #013C49;
+  color: #013C49;
+  border-radius: 50%;
+  width: 42px;
+  height: 42px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: 0.3s;
+}
+
+#btn-inicio:hover {
+  background: #013C49;
+  color: white; 
+}
+
+/* --- Animación de entrada --- */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ----------------------------------------------------------
+   MAPA PRINCIPAL
+---------------------------------------------------------- */
+
+/* Ventana del mapa */
+#contenedor {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  background: black;
+}
+
+/* Grupo que contiene mapa + zonas (es lo que se mueve y escala) */
+#mapa-grupo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform-origin: top left;
+}
+
+/* Imagen */
+#mapa {
+  display: block;
+  max-width: none;
+  max-height: none;
+  user-select: none;
+  pointer-events: none; /* no tapa los clicks */
+}
+
+/* Zonas clickeables */
+.zona {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Posiciones de ejemplo */
+.ciudad { top: 300px; left: 1420px; }
+.huerta { top: 680px; left: 250px; }
+.playa { top: 1650px; left: 750px; }
+.tunel { top: 2250px; left: 1750px; }
+.domo { top: 2500px; left: 680px; }
+.incognita1 { top: 1100px; left: 1280px; }
+.incognita2 { top: 2460px; left: 220px; }
+.animal1 { top: 150px; left: 370px; }
+.animal2 { top: 790px; left: 1740px; }
+
+/* ----------------------------------------------------------
+   VENTANAS DE INFO (contenido de cada área)
+---------------------------------------------------------- */
+.cont.info {
+  display: none; /* arrancan cerradas y se abren con JS */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-image: url('fondo.png');
+  width: 300px;
+  height: 300px;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  text-align: center;
+}
+
+/* Texto interior con Acumin */
+.cont.info p {
+  font-family: 'Acumin Variable Concept', 'Inter', sans-serif;
+  margin: 20px;
+  color: #013C49;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.4;
+  opacity: 0;
+  animation: textoInfoFade 0.6s ease forwards;
+}
+
+.cont.info a{
+  font-family: 'Acumin Variable Concept', 'Inter', sans-serif;  
+  color: #013C49;
+  font-weight: bold;
+}
+
+/* Animación de aparición de texto */
+@keyframes textoInfoFade {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Botón cerrar */
+.cerrar {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+
+/* Estilo para celulares */
+@media (max-width: 600px) {
+  .inicio-caja {
+    margin: 20px; /* separa la caja de los bordes de la pantalla */
+    padding: 30px 20px; /* opcional, ajusta el padding si quieres que se vea mejor */
+  }
+
+  .cerrar {
+    font-size: 30px;
+  }
+}
